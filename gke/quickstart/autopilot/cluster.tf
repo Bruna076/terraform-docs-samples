@@ -16,14 +16,14 @@
 
 # [START gke_quickstart_autopilot_cluster]
 resource "google_compute_network" "default" {
-  name = "example-network"
+  name = "example-network-mb"
 
   auto_create_subnetworks  = false
   enable_ula_internal_ipv6 = true
 }
 
 resource "google_compute_subnetwork" "default" {
-  name = "example-subnetwork"
+  name = "example-subnetwork-mb"
 
   ip_cidr_range = "10.0.0.0/16"
   region        = "us-central1"
@@ -44,7 +44,7 @@ resource "google_compute_subnetwork" "default" {
 }
 
 resource "google_container_cluster" "default" {
-  name = "example-autopilot-cluster"
+  name = "example-autopilot-cluster-mb"
 
   location                 = "us-central1"
   enable_autopilot         = true

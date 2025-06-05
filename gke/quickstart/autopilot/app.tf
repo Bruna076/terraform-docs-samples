@@ -30,7 +30,7 @@ provider "kubernetes" {
 
 resource "kubernetes_deployment_v1" "default" {
   metadata {
-    name = "example-hello-app-deployment"
+    name = "mb-gcp-cluster"
   }
 
   spec {
@@ -107,7 +107,7 @@ resource "kubernetes_deployment_v1" "default" {
 
 resource "kubernetes_service_v1" "default" {
   metadata {
-    name = "example-hello-app-loadbalancer"
+    name = "example-hello-app-loadbalancer-mb"
     annotations = {
       "networking.gke.io/load-balancer-type" = "Internal" # Remove to create an external loadbalancer
     }
